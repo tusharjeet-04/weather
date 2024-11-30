@@ -1,0 +1,222 @@
+/* Add a full-screen background image */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("./assets/highway-and-bad-weather-rbksp3jv3htqc4af.jpg");
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  overflow-y: hidden;
+  background-repeat: no-repeat;
+}
+
+/* Main container styling */
+.mainPardiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Center-highlighted box */
+.mainPardiv::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  /* background: rgba(255, 255, 255, 0.8); */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  z-index: -1; /* Place behind the content */
+}
+
+.WeatherHead {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form styling */
+.WeatherForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.CityInput {
+  width: 350px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #66a6ff;
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+
+.SearchButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.SearchButton:hover {
+  background-color: #0056b3;
+}
+
+/* Error message styling */
+.error {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: red;
+}
+
+/* Weather result styling */
+.WeatherResult {
+  margin-top: 20px;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ParWeatherInfo {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.Cityimg{
+  background-image: url(./assets/City.png);
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background-color: #66a6ff;
+  border-radius: 50%;
+  background-size: contain;
+}
+.TempImg{
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background-color: #66a6ff;
+  border-radius: 50%;
+  background-image: url(./assets/Sun.png);
+  background-size: contain;
+}
+.descritionimg{
+width: 40px;
+height: 40px;
+margin-right: 10px;
+background-color: #66a6ff;
+border-radius: 50%;
+background-image: url(./assets/Description.png);
+background-size: contain;
+}
+.Humidityimg{
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background-color: #66a6ff;
+  border-radius: 50%;
+  background-image: url(./assets/Humidity.png);
+  background-size: contain;
+}
+.Windimg {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background-color: #66a6ff;
+  border-radius: 50%;
+  background-image: url(./assets/Wind.png);
+  background-size: contain;
+}
+
+.ResultCityName {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Typography for weather details */
+.ParWeatherInfo p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* -------- Responsive Styles -------- */
+
+/* Tablet view */
+@media (max-width: 768px) {
+  .WeatherHead {
+    font-size: 2rem;
+  }
+
+  .CityInput {
+    width: 90%; /* Take up more space on smaller screens */
+  }
+
+  .SearchButton {
+    padding: 10px 15px;
+  }
+
+  .WeatherResult {
+    padding: 15px;
+  }
+
+  .ParWeatherInfo p {
+    font-size: 0.95rem; /* Slightly smaller text */
+  }
+}
+
+/* Mobile view */
+@media (max-width: 480px) {
+  .WeatherHead {
+    font-size: 1.8rem;
+  }
+
+  .CityInput {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+
+  .SearchButton {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .WeatherResult {
+    padding: 10px;
+  }
+
+  .ParWeatherInfo {
+    flex-direction: column; /* Stack content vertically */
+    text-align: left;
+  }
+
+  .ParWeatherInfo p {
+    font-size: 0.85rem;
+    margin: 5px 0;
+  }
+
+  .Cityimg,
+  .TempImg,
+  .descritionimg,
+  .Humidityimg,
+  .Windimg {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px; /* Add spacing when stacked */
+  }
+}
